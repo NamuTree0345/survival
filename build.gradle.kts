@@ -1,8 +1,8 @@
-import kr.entree.spigradle.kotlin.paper
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmOptions
 
 plugins {
-    kotlin("jvm") version "1.5.10"
-    id("kr.entree.spigradle") version "2.2.3"
+    kotlin("jvm") version "1.5.20"
+    //id("kr.entree.spigradle") version "2.2.3"
 }
 
 group = "org.example"
@@ -18,11 +18,14 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib"))
     compileOnly("io.papermc.paper:paper-api:1.17-R0.1-SNAPSHOT")
-    compileOnly("com.github.spigradle.spigradle:kr.entree.spigradle.base.gradle.plugin:v2.2.3")
+    //compileOnly("com.github.spigradle.spigradle:kr.entree.spigradle.base.gradle.plugin:v2.2.3")
+    compileOnly("io.github.monun:kommand:1.2.1")
+    compileOnly("io.github.monun:tap:4.0.0-RC")
     //compileOnly(paper("1.16.5"))
     //compileOnly("com.comphenix.protocol:ProtocolLib:4.6.0")
 }
 
+/*
 spigot {
     authors = listOf("NamuTree0345")
     apiVersion = project.property("apiVersion").toString()
@@ -31,6 +34,7 @@ spigot {
         //create("hello")
     }
 }
+ */
 
 val shade = configurations.create("shade")
 shade.extendsFrom(configurations.implementation.get())
@@ -46,10 +50,14 @@ tasks {
     }
 
     compileKotlin {
-        kotlinOptions.jvmTarget = "16"
+        (kotlinOptions as KotlinJvmOptions).apply {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
     }
     compileTestKotlin {
-        kotlinOptions.jvmTarget = "16"
+        (kotlinOptions as KotlinJvmOptions).apply {
+            jvmTarget = JavaVersion.VERSION_1_8.toString()
+        }
     }
 
     create<Jar>("sourceJar") {

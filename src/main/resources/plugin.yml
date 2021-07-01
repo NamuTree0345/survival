@@ -1,0 +1,12 @@
+name: Survival
+main: xyz.namutree0345.survival.Survival
+version: 1.0.0
+
+commands:
+  survival:
+    description: survival control
+
+
+libraries:
+  - io.github.monun:kommand:1.2.0
+  - io.github.monun:tap:4.0.0
