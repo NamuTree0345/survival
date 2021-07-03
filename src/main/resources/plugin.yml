@@ -8,5 +8,5 @@ commands:
 
 
 libraries:
-  - io.github.monun:kommand:1.2.0
-  - io.github.monun:tap:4.0.0
+  - io.github.monun:kommand:1.2.1
+  - io.github.monun:tap:4.0.0-RC

@@ -9,7 +9,7 @@ object BossBR {
     lateinit var bossBar: BossBar
 
     fun init() {
-        bossBar = BossBar.bossBar(Component.text("", NamedTextColor.RED), 1.0F, BossBar.Color.GREEN, BossBar.Overlay.NOTCHED_10)
+        bossBar = BossBar.bossBar(Component.text("전장 축소로부터: 300초", NamedTextColor.GREEN), 1.0F, BossBar.Color.GREEN, BossBar.Overlay.NOTCHED_10)
     }
 
 }
