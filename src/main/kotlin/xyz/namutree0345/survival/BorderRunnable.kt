@@ -71,9 +71,6 @@ object BorderRunnable : Runnable {
                     BossBR.bossBar.name(Component.text("전장 축소중: ${time}초", NamedTextColor.GREEN))
                 }
                 else -> {
-                    for (onlinePlayer in Bukkit.getOnlinePlayers()) {
-                        onlinePlayer.isGlowing = false
-                    }
                     BossBR.bossBar.name(Component.text("전장 축소로부터: ${time}초", NamedTextColor.GREEN))
                 }
             }
